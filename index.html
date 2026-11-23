@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Звонок - расписание звонков колледжа</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/bell.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#cc6600">
+</head>
+<body>
+
+<header>
+  <div class="wrap head">
+    <a href="index.html" class="logo"><img src="images/bell.png" alt="">Звонок</a>
+    <nav>
+      <a href="index.html" class="active">Главная</a>
+      <a href="schedule.html">Расписание</a>
+      <a href="about.html">О проекте</a>
+      <button type="button" id="themeBtn">Тёмная</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1 class="page-title">Звонок - сколько осталось до конца пары</h1>
+
+  <section class="now" id="now">
+    <div id="today"></div>
+    <div id="status">Загрузка...</div>
+    <div id="timer">--:--</div>
+    <div id="next"></div>
+  </section>
+
+  <section class="today-list">
+    <h2>Звонки на сегодня</h2>
+    <table id="todayTable"></table>
+    <p class="small">Полное расписание можно посмотреть на странице <a href="schedule.html">Расписание</a>.</p>
+  </section>
+
+  <section class="info">
+    <p>ГБПОУ РМ «Саранский государственный промышленно-экономический колледж» (СГПЭК)</p>
+    <p>Республиканский конкурс Интернет-ресурсов, номинация «Web-проект»</p>
+    <p>Автор: Потапов Артемий Сергеевич, студент группы ИСИП3Б</p>
+    <p>Руководитель: Чикнайкина Ольга Леонидовна</p>
+    <p>Специальность: ИСИП, г. Саранск</p>
+    <p>Дата разработки: ноябрь 2026 г.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">2026, Потапов А.С.</div>
+</footer>
+
+<script src="js/calendar.js"></script>
+<script src="js/main.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

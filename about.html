@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О проекте</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/bell.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#cc6600">
+</head>
+<body>
+
+<header>
+  <div class="wrap head">
+    <a href="index.html" class="logo"><img src="images/bell.png" alt="">Звонок</a>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="schedule.html">Расписание</a>
+      <a href="about.html" class="active">О проекте</a>
+      <button type="button" id="themeBtn">Тёмная</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="text">
+    <h1>О проекте</h1>
+
+    <p>Идея появилась на парах: постоянно кто-то спрашивает «сколько до конца?», а расписание звонков висит только в коридоре. Захотел сделать простой сайт, который можно открыть с телефона и сразу увидеть, какая сейчас пара и сколько осталось до звонка.</p>
+
+    <p>На главной странице показывается текущая пара или перемена, таймер и список звонков на сегодня. В субботу и в предпраздничные дни пары короче, поэтому для них используется сокращённое расписание, а в государственные праздники отображается выходной. Ещё есть страница со всеми звонками и переключение светлой/тёмной темы. Сделано на обычном HTML, CSS и JavaScript без сторонних библиотек. Время берётся с устройства, так что если часы на телефоне спешат, таймер тоже будет спешить.</p>
+
+    <p>Потом планирую добавить расписание самих пар для нашей группы.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">2026, Потапов А.С.</div>
+</footer>
+
+<script src="js/theme.js"></script>
+</body>
+</html>
