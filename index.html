@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Звонок - расписание СГПЭК</title>
+  <meta name="description" content="Сколько осталось до звонка в СГПЭК: идет пара или перемена, таймер и звонки на сегодня.">
+  <script>
+    if (localStorage.getItem('theme') == 'dark') document.documentElement.classList.add('dark');
+  </script>
+  <link rel="icon" type="image/png" href="images/bell.png">
+  <link rel="apple-touch-icon" href="images/icon-192.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="header-wrap">
+    <header class="header">
+      <a class="logo" href="index.html">
+        <img src="images/bell.png" alt="Звонок" width="30" height="30">
+        <span>Звонок</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html" class="active">Сейчас</a>
+        <a href="schedule.html">Расписание</a>
+        <a href="about.html">О проекте</a>
+      </nav>
+
+      <div class="header-btns">
+        <button class="install-btn" id="installBtn" style="display: none;">Установить</button>
+        <button class="theme-btn" id="themeBtn">Темная тема</button>
+      </div>
+    </header>
+  </div>
+
+  <main class="main-grid">
+    <section class="timer-card" id="timerCard">
+      <div class="card-top">
+        <div class="date-clock">
+          <span id="todayDate"></span>
+          <span class="clock-now" id="clockNow"></span>
+        </div>
+        <span class="badge" id="dayBadge"></span>
+      </div>
+
+      <h1 class="status" id="statusText">Загрузка...</h1>
+
+      <div class="timer-box" id="timerBox" style="display: none;">
+        <div class="timer" id="timerValue">00:00</div>
+        <span class="timer-caption" id="timerLabel">до звонка</span>
+      </div>
+
+      <div class="progress-bar" id="progressBar" style="display: none;">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <p class="sub-text" id="subText"></p>
+    </section>
+
+    <section class="today-block">
+      <div class="today-header">
+        <h2>Звонки на сегодня</h2>
+        <a href="schedule.html">Все расписание</a>
+      </div>
+      <ul class="bells-list" id="todayList"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="credits">
+      <div class="credit-item">
+        <strong>Уч. учреждение:</strong>
+        <span>ГБПОУ РМ "Саранский государственный промышленно-экономический колледж" (СГПЭК), г. Саранск</span>
+      </div>
+      <div class="credit-item">
+        <strong>Конкурс:</strong>
+        <span>Республиканский конкурс Интернет-ресурсов среди студентов средних профессиональных образовательных учреждений Республики Мордовия, 2026. Номинация 1 "Web-проект"</span>
+      </div>
+      <div class="credit-item">
+        <strong>Проект:</strong>
+        <span>Звонок - расписание звонков СГПЭК</span>
+      </div>
+      <div class="credit-item">
+        <strong>Разработчик:</strong>
+        <span>Потапов Артемий Сергеевич, студент группы ИСИП3Б, СГПЭК</span>
+      </div>
+      <div class="credit-item">
+        <strong>Руководитель:</strong>
+        <span>Чикнайкина Ольга Леонидовна</span>
+      </div>
+      <div class="credit-item">
+        <strong>Дата разработки:</strong>
+        <span>26 ноября 2026 г.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/calendar.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
