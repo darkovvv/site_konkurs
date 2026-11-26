@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Расписание звонков - Звонок</title>
+  <meta name="description" content="Полное расписание звонков СГПЭК: обычное для будних дней и сокращенное для субботы и предпраздничных дней.">
+  <script>
+    if (localStorage.getItem('theme') == 'dark') document.documentElement.classList.add('dark');
+  </script>
+  <link rel="icon" type="image/png" href="images/bell.png">
+  <link rel="apple-touch-icon" href="images/icon-192.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="header-wrap">
+    <header class="header">
+      <a class="logo" href="index.html">
+        <img src="images/bell.png" alt="Звонок" width="30" height="30">
+        <span>Звонок</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Сейчас</a>
+        <a href="schedule.html" class="active">Расписание</a>
+        <a href="about.html">О проекте</a>
+      </nav>
+
+      <div class="header-btns">
+        <button class="install-btn" id="installBtn" style="display: none;">Установить</button>
+        <button class="theme-btn" id="themeBtn">Темная тема</button>
+      </div>
+    </header>
+  </div>
+
+  <main class="container">
+    <h1>Расписание звонков</h1>
+    <p class="lead" id="schedNote">С понедельника по пятницу действует обычное расписание, в субботу и перед праздниками - сокращенное</p>
+
+    <div class="sched-grid">
+      <section class="sched-card" id="schedNormal">
+        <div class="sched-title">
+          <h2>Обычное</h2>
+          <span class="today-tag" id="tagNormal" style="display: none;">Сегодня</span>
+        </div>
+        <p class="sched-sub">Понедельник - пятница, пары по 1ч 20 минут (7ая пара - один час)</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Пара</th>
+              <th>Начало</th>
+              <th>Конец</th>
+              <th>Перемена</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1 пара</td><td>08:00</td><td>09:20</td><td>10 мин</td></tr>
+            <tr><td>2 пара</td><td>09:30</td><td>10:50</td><td>20 мин</td></tr>
+            <tr><td>3 пара</td><td>11:10</td><td>12:30</td><td>10 мин</td></tr>
+            <tr><td>4 пара</td><td>12:40</td><td>14:00</td><td>10 мин</td></tr>
+            <tr><td>5 пара</td><td>14:10</td><td>15:30</td><td>10 мин</td></tr>
+            <tr><td>6 пара</td><td>15:40</td><td>17:00</td><td>10 мин</td></tr>
+            <tr><td>7 пара</td><td>17:10</td><td>18:10</td><td>-</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="sched-card" id="schedShort">
+        <div class="sched-title">
+          <h2>Сокращенное</h2>
+          <span class="today-tag" id="tagShort" style="display: none;">Сегодня</span>
+        </div>
+        <p class="sched-sub">Суббота и предпраздничные дни, все пары по часу</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Пара</th>
+              <th>Начало</th>
+              <th>Конец</th>
+              <th>Перемена</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1 пара</td><td>08:00</td><td>09:00</td><td>10 мин</td></tr>
+            <tr><td>2 пара</td><td>09:10</td><td>10:10</td><td>10 мин</td></tr>
+            <tr><td>3 пара</td><td>10:20</td><td>11:20</td><td>10 мин</td></tr>
+            <tr><td>4 пара</td><td>11:30</td><td>12:30</td><td>10 мин</td></tr>
+            <tr><td>5 пара</td><td>12:40</td><td>13:40</td><td>10 мин</td></tr>
+            <tr><td>6 пара</td><td>13:50</td><td>14:50</td><td>10 мин</td></tr>
+            <tr><td>7 пара</td><td>15:00</td><td>16:00</td><td>-</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <p class="note-bottom">В воскресенье и гос. праздники пар нет. Выходные и переносы учтены на 2026-2027 учебный год</p>
+  </main>
+
+  <footer class="footer">
+    <span>СГПЭК, г. Саранск - Потапов Артемий, гр. ИСИП3Б, 2026</span>
+  </footer>
+
+  <script src="js/calendar.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
