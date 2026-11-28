@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О проекте - Звонок</title>
+  <meta name="description" content="Как устроен сайт Звонок: таймер пар СГПЭК, переключение расписания и работа без инета">
+  <script>
+    if (localStorage.getItem('theme') == 'dark') document.documentElement.classList.add('dark');
+  </script>
+  <link rel="icon" type="image/png" href="images/bell.png">
+  <link rel="apple-touch-icon" href="images/icon-192.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="header-wrap">
+    <header class="header">
+      <a class="logo" href="index.html">
+        <img src="images/bell.png" alt="Звонок" width="30" height="30">
+        <span>Звонок</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Сейчас</a>
+        <a href="schedule.html">Расписание</a>
+        <a href="about.html" class="active">О проекте</a>
+      </nav>
+
+      <div class="header-btns">
+        <button class="install-btn" id="installBtn" style="display: none;">Установить</button>
+        <button class="theme-btn" id="themeBtn">Темная тема</button>
+      </div>
+    </header>
+  </div>
+
+  <main class="container about-page">
+    <h1>О проекте</h1>
+    <p class="lead">Сайт создан для студентов СГПЭК, поскольку на парах часто возникают вопросы: сколько минут осталось до звонка и когда заканчивается перемена. В субботу и перед праздниками легко запутаться, так как обычные пары идут по 1 ч 20 мин, а сокращённые по 60 минут</p>
+
+    <h2>Возможности сайта</h2>
+    <ul>
+      <li>Отображается обратный отсчёт до конца пары, перемены или до начала 1-ой пары</li>
+      <li>Нужное расписание выбирается автоматически: обычное по будням, сокращённое в субботу и в предпраздничные дни</li>
+      <li>Учитываются воскресенья, праздники и переносы выходных на 2026-2027 учебный год, а также указывается день ближайших пар</li>
+      <li>Выводится список звонков на сегодня: прошедшие пары зачёркиваются, текущая выделяется</li>
+      <li>На отдельной вкладке представлены обе таблицы звонков СГПЭК, сегодняшняя помечена</li>
+      <li>Поддерживаются светлая и тёмная темы (выбор сохраняется в <code>localStorage</code>)</li>
+    </ul>
+
+    <h2>Как работает время</h2>
+    <p>Таймер берёт время с часов устройства, на котором открыт сайт, без запросов к серверу. Поэтому точность зависит от времени на телефоне или компьютере</p>
+
+    <h2>Работа без интернета и установка</h2>
+    <p>В центре города, где расположен колледж, мобильная сеть заглушена с сентября 2025 года. Поэтому к сайту подключены <code>manifest.json</code> и <code>sw.js</code>, реализованные по руководствам MDN по PWA. В Хроме и Яндекс Браузере сайт можно добавить на главный экран через меню или кнопкой установить на телефонах, а после первого открытия страницы загружаются из кэша, хранящегося на устройстве</p>
+    <p>Если открыть <code>index.html</code> просто как локальный файл с диска, расписание и таймер работают как обычно, а установка PWA и кэширование доступны только при запуске через веб-сервер (<code>http</code> или <code>https</code>).</p>
+
+    <h2>Стек и ресурсы</h2>
+    <p>Проект написан на чистых HTML, CSS и JavaScript без фреймворков. Манифест и Service Worker настроены по справочнику MDN, иконки колокольчика нарисованы на телефоне в приложении PixelLab</p>
+
+    <h2>Автор</h2>
+    <div class="about-credits">
+      <p><strong>Разработчик:</strong> Потапов Артемий Сергеевич, студент группы ИСИП3Б</p>
+      <p><strong>Уч. учреждение:</strong> ГБПОУ РМ "Саранский государственный промышленно-экономический колледж" (СГПЭК), г. Саранск</p>
+      <p><strong>Руководитель:</strong> Чикнайкина Ольга Леонидовна</p>
+      <p><strong>Дата разработки:</strong> 26 ноября 2026 г.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>СГПЭК, г. Саранск - Потапов Артемий, гр. ИСИП3Б, 2026</span>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
